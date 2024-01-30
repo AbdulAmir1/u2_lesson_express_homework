@@ -5,14 +5,14 @@ const skillsCtrl = require('../controllers/skills')
 /* test */
 router.get('/test/val/:val', skillsCtrl.test)
 
+/* GET skills/add */
+router.get('/add', skillsCtrl.newSkill)
+
 /* GET skills/id */
 router.get('/:id', skillsCtrl.showSkill)
 
 /* GET Skills listing. */
 router.get('/', skillsCtrl.showAllSkills)
-
-/* GET skills/add */
-router.get('/add', skillsCtrl.newSkill)
 
 /* POST skills/add */
 router.post('/add', skillsCtrl.create)

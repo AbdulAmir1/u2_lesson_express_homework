@@ -23,7 +23,7 @@ const showSkill = (req, res) => {
 }
 
 const test = (req, res) => {
-  // req.params.val = '123'
+  // dreq.params.val = '123'
   res.render('test', { id1: req.params.val })
 }
 
