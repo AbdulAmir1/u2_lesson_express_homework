@@ -21,7 +21,12 @@ const create = (newSkill) => {
   })
 }
 
+const getOne = (id) => {
+  return skills.find((skill) => skill.id === parseInt(id))
+}
+
 module.exports = {
   getAll,
-  create
+  create,
+  getOne
 }

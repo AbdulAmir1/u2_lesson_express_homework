@@ -16,8 +16,21 @@ const create = (req, res) => {
   res.redirect('/skills')
 }
 
+const showSkill = (req, res) => {
+  const skill = skills.getOne(req.params.id)
+  res.locals.skill = skill
+  res.render('showSkill')
+}
+
+const test = (req, res) => {
+  // req.params.val = '123'
+  res.render('test', { id1: req.params.val })
+}
+
 module.exports = {
   showAllSkills,
   newSkill,
-  create
+  create,
+  showSkill,
+  test
 }

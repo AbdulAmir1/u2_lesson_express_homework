@@ -2,7 +2,7 @@
   <%- include('main_menu') %>
   <ul>
   <% skills.forEach(skill => {  %>
-    <li></li><%=skill.name%></li>
+    <li><a href="/skills/<%=skill.id%>"><%=skill.name%></a></li>
   <% }) %>
   </ul>
 </body>
