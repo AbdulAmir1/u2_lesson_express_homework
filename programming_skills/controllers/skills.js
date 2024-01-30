@@ -6,6 +6,18 @@ const showAllSkills = (req, res) => {
   res.render('showAll', { skills: allSkills })
 }
 
+const newSkill = (req, res) => {
+  res.render('newSkill')
+}
+
+const create = (req, res) => {
+  console.log(req.body)
+  skills.create(req.body)
+  res.redirect('/skills')
+}
+
 module.exports = {
-  showAllSkills
+  showAllSkills,
+  newSkill,
+  create
 }
