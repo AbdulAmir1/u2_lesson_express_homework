@@ -12,6 +12,16 @@ const getAll = () => {
   return skills
 }
 
+const create = (newSkill) => {
+  const newId = Math.floor(Date.now() / 10000000)
+  skills.push({
+    id: newId,
+    name: newSkill.skillName,
+    description: newSkill.description
+  })
+}
+
 module.exports = {
-  getAll
+  getAll,
+  create
 }
