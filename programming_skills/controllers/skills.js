@@ -16,10 +16,22 @@ const create = (req, res) => {
   res.redirect('/skills')
 }
 
+const deleteSkill = (req, res) => {
+  skills.deleteOne(req.params.id)
+  res.redirect('/skills')
+}
+
 const showSkill = (req, res) => {
   const skill = skills.getOne(req.params.id)
   res.locals.skill = skill
   res.render('showSkill')
+}
+
+const editSkill = (req, res) => {
+  console.log(req.body)
+  skills.update(req.params.id, req.body)
+  console.log(skills.getAll())
+  res.redirect('/skills')
 }
 
 const test = (req, res) => {
@@ -32,5 +44,7 @@ module.exports = {
   newSkill,
   create,
   showSkill,
+  deleteSkill,
+  editSkill,
   test
 }

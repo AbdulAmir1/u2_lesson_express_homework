@@ -1,8 +1,23 @@
 <body>
   <%- include('main_menu') %>
+  <style>
+    form {
+      display: inline-block;
+    }
+    .deleteButton {
+      border: none;
+      background-color: transparent;
+      color: red;
+    }
+
+    .deleteButton:hover {
+      text-decoration: underline;
+    }
+  </style>
   <ul>
   <% skills.forEach(skill => {  %>
-    <li><a href="/skills/<%=skill.id%>"><%=skill.name%></a></li>
+    <li><a href="/skills/<%=skill.id%>"><%=skill.name%></a><form action="/skills/<%= skill.id %>?_method=DELETE" method="POST"><button type="submit" class="deleteButton">delete</button></form></li>
+    
   <% }) %>
   </ul>
 </body>

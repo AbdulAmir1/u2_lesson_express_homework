@@ -17,4 +17,10 @@ router.get('/', skillsCtrl.showAllSkills)
 /* POST skills/add */
 router.post('/add', skillsCtrl.create)
 
+// DELETE /skills/:id
+router.delete('/:id', skillsCtrl.deleteSkill)
+
+/* UPDATE skills/:d */
+router.put('/:id', skillsCtrl.editSkill)
+
 module.exports = router
