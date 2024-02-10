@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <title>Details</title>
+</head>
+<body>
+  <div id="skillSection">
+    <div  id="skillName"><%=skill.name%></div>
+    <div id="description"><%=skill.description%></div>
+    <a href="#" onclick = "edit()">edit</a>
+  </div>
+  <script>
+    let oldName= document.querySelector('#skillName').innerText
+    let oldDescription= document.querySelector('#description').innerText
+    const edit = () => {
+      document.body.querySelector('#skillSection').innerHTML = `
+      <h2 class="addNewSkillTitle">EDIT SKILL</h2>
+      <section class="addNewSkillSection">
+        <form action="/skills/id=<%=skill.id%>?_method=PUT" method="POST">
+          <div class="skillNameInput">
+            <label>Name</label>
+            <input type="text" name="skillName" placeholder="Skill Name">
+          </div>
+          <div>
+            <lable id="descrptionLabel">Description</lable>
+            <textarea name="description" id="description" cols="30" rows="10" placeholder="Add some description"></textarea>
+          </div>
+            
+          <div>
+            <button type="submit">Update</button>
+            <button onclick="location.href='/skills'" type="button">Cancel</button>
+          </div>
+        </form>
+      </section>
+      `
+/* 
+  `
+    <form action="/skills/id=<%=skill.id%>?_method=PUT" method="POST">
+      <label>Name</label><input type="text" name="skillName" placeholder="Skill Name">
+      <lable>Description</lable><textarea name="description" id="description" cols="30" rows="10" placeholder="Add some description"></textarea>
+      <button type="submit">Update</button><button onclick='cancel()'>cancel</button>
+    </form>
+  `
+ */      
+      document.querySelector('input[name="skillName"]').value = oldName
+      document.querySelector('textarea[name="description"]').value = oldDescription
+    }
+
+    const cancel = () => {
+      document.body.querySelector('#skillSection').innerHTML = `
+      <div id="skillName"><%=skill.name%></div>
+      <div id="description"><%=skill.description%></div>
+      <a href="#" onclick = "edit()">edit</a>
+      `
+
+      location.reload()
+    }
+
+
+  </script>
+</body>
+</html>

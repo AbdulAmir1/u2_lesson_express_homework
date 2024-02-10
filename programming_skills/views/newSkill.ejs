@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <title>New Skill</title>
+</head>
+<body>
+  <h2 class="addNewSkillTitle">ADD NEW SKILL</h2>
+  <section class="addNewSkillSection">
+    <form action="/skills/add" method="POST">
+      <div class="skillNameInput">
+        <label>Name</label>
+        <input type="text" name="skillName" placeholder="Skill Name">
+      </div>
+      <div>
+        <lable id="descrptionLabel">Description</lable>
+        <textarea name="description" id="description" cols="30" rows="10" placeholder="Add some description"></textarea>
+      </div>
+        
+      <div>
+        <button type="submit">Add</button>
+        <button onclick="location.href='/skills'" type="button">Cancel</button>
+      </div>
+    </form>
+  </section>
+</body>
+</html>
