@@ -3,11 +3,11 @@ const skills = require('../models/skills')
 const showAllSkills = (req, res) => {
   const allSkills = skills.getAll()
   //res.locals.allSkills = allSkills
-  res.render('showAll', { skills: allSkills })
+  res.render('showAll', { skills: allSkills, title: 'All Skills' })
 }
 
 const newSkill = (req, res) => {
-  res.render('newSkill')
+  res.render('newSkill', { title: 'Add New Skill' })
 }
 
 const create = (req, res) => {
@@ -24,7 +24,7 @@ const deleteSkill = (req, res) => {
 const showSkill = (req, res) => {
   const skill = skills.getOne(req.params.id)
   res.locals.skill = skill
-  res.render('showSkill')
+  res.render('showSkill', { title: 'Details' })
 }
 
 const editSkill = (req, res) => {

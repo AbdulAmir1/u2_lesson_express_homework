@@ -1,10 +1,26 @@
 <body>
   <%- include('main_menu') %>
   <style>
+    section {
+      width: 40%;
+      margin: 30px auto 0;
+      padding: 0 0 10px 0;
+      border: 2px solid blue;
+      border-radius: 10px;
+    }
+    h1 {
+      width: 113px;
+        margin: 20px auto 0;
+        background-color: #f7f2c3;
+    }
+
     form {
       display: inline-block;
+      width: 100px;
+      margin: 0;
     }
     .deleteButton {
+      height: 13px;
       border: none;
       background-color: transparent;
       color: red;
@@ -13,12 +29,41 @@
     .deleteButton:hover {
       text-decoration: underline;
     }
+
+    ul {
+      width: 200px;
+      margin: 0;
+      padding: 0;
+      margin: 40px auto 0;
+    }
+
+    li {
+      background-color:#eef0f5;
+      margin: 0 0 2px 0;
+      list-style: none;
+      list-style-position: outside;
+    }
+
+    li div {
+      display: inline-block;
+      width: 100px;
+      /* margin: 0 auto 0; */
+      font-size: 14px;
+    }
+    li button {
+      float: right;
+    }
+
   </style>
-  <ul>
-  <% skills.forEach(skill => {  %>
-    <li><a href="/skills/<%=skill.id%>"><%=skill.name%></a><form action="/skills/<%= skill.id %>?_method=DELETE" method="POST"><button type="submit" class="deleteButton">delete</button></form></li>
-    
-  <% }) %>
-  </ul>
+  <section>
+    <h1>MY SKILLS</h1>
+    <ul>
+    <% skills.forEach(skill => {  %>
+      <li><div><a href="/skills/<%=skill.id%>"><%=skill.name%></a></div><form action="/skills/<%= skill.id %>?_method=DELETE" method="POST"><button type="submit" class="deleteButton">delete</button></form></li>
+      
+    <% }) %>
+    </ul>
+  </section>
+  
 </body>
 <%- include('footer') %>

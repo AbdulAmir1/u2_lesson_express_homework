@@ -1,8 +1,44 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
 }
 
-a {
-  color: #00B7FF;
+div.footerMenu {
+  width: 52px;
+  margin: 20px auto 0;
+}
+
+/* newSill.ejs */
+
+section.addNewSkillSection {
+  width: 40%;
+  margin: 30px auto 0;
+  padding: 5px;
+  border: 2px solid black;
+  border-radius: 10px;
+}
+
+#descrptionLabel {
+  display: inline-block;
+  vertical-align: top;
+}
+
+h2.addNewSkillTitle {
+  width: 168px;
+  margin: 30px auto 0;
+}
+
+section.addNewSkillSection div {
+  margin: 5px 0 0;
+}
+
+section.addNewSkillSection div:last-child {
+  margin: 0 0 0 73px;
+}
+
+section.addNewSkillSection input[type='text'] {
+  margin-left: 32px;
+}
+section.addNewSkillSection textarea {
+  display: inline-block;
 }
