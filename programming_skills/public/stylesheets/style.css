@@ -42,3 +42,32 @@ section.addNewSkillSection input[type='text'] {
 section.addNewSkillSection textarea {
   display: inline-block;
 }
+
+div#skillSection {
+  width: 50%;
+  /* background-color: bisque; */
+  margin: 70px auto 0;
+  padding: 3px;
+  /* border: 1px solid #000; */
+}
+
+div#skillName {
+  width: calc(100% - 15px);
+  font-weight: bold;
+  margin: 2px auto 0;
+  text-align: center;
+  color: #fff;
+  background-color: crimson;
+}
+
+div#description {
+  margin: 4px 0 0 7px;
+}
+
+#skillSection a {
+  float: right;
+  display: block;
+  color: white;
+  padding: 2px;
+  background-color: black;
+}
